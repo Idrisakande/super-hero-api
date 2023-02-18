@@ -48,13 +48,10 @@ const statToEmoji = {
 const showHeroInfo = (character) => {
   const name = `<h2>${character.name}</h2>`;
   const img = `<img src='${character.image.url}' height=235 width=250/>`;
-  // for (stat in character.powerstats) {
-  //   console.log(stat)
   let stats = Object.keys(character.powerstats)
     .map((stat) => {
-      return `<p>${statToEmoji[stat]} ${stat.toUpperCase()}: ${
-        character.powerstats[stat]
-      }</p>`;
+      return `<p>${statToEmoji[stat]} ${stat.toUpperCase()}: ${character.powerstats[stat]
+        }</p>`;
     })
     .join("");
   superHeroImageDiv.innerHTML = `${name}${img}${stats}`;
